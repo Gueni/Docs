@@ -1,0 +1,1 @@
+Folder for sharing customized training information. Create a new subfolder with the  [Year]-[Month]-[Company Name] for each training e.g.  "2022-09-My EDA Company"  

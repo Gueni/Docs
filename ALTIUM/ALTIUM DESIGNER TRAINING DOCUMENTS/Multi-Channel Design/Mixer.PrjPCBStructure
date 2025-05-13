@@ -1,0 +1,4 @@
+Record=TopLevelDocument|FileName=Mixer.SchDoc|SheetNumber=5
+Record=SheetSymbol|SourceDocument=Mixer.SchDoc|Designator=AUX|SchDesignator=AUX|FileName=Auxilary.SchDoc|SheetNumber=1|SymbolType=Normal|RawFileName=Auxilary.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Mixer.SchDoc|Designator=HP|SchDesignator=HP|FileName=Headphone.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=Headphone.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Mixer.SchDoc|Designator=INP|SchDesignator=INP|FileName=Input channel.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=Input channel.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

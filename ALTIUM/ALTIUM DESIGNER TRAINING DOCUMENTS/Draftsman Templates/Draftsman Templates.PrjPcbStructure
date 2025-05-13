@@ -1,0 +1,5 @@
+Record=TopLevelDocument|FileName=CAN_Interface.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=CAN_Interface.SchDoc|FileName=Digital_IO.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=CAN_Interface.SchDoc|FileName=Power Supply.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=CAN_Interface.SchDoc|FileName=Processor_Interface.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=CAN_Interface.SchDoc|FileName=Relay_IO.SchDoc|SheetNumber=4

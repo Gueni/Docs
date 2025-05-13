@@ -1,0 +1,93 @@
+Added Component: Designator=F1(1/4 FUSE)
+Add component (AddParameter): Name = "ClassName"; Value = "120_VOLT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CURRENT_RATING"; Value = "10 A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MANUFACTURE"; Value = "COOPER BUSSMAN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PART NUMBER"; Value = "GBB-10-R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VOLTAGE_RATING"; Value = "250 VAC"; VariantName = "[No Variations]"
+Added Component: Designator=F2(13/32 FUSE)
+Add component (AddParameter): Name = "ClassName"; Value = "240_VOLT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CURRENT_RATING"; Value = "10 A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MANUFACTURE"; Value = "COOPER BUSSMAN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PART NUMBER"; Value = "KTK-R-10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VOLTAGE_RATING"; Value = "600 VAC"; VariantName = "[No Variations]"
+Added Component: Designator=F3(13/32 FUSE)
+Add component (AddParameter): Name = "ClassName"; Value = "240_VOLT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CURRENT_RATING"; Value = "20 A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MANUFACTURE"; Value = "COOPER BUSSMAN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PART NUMBER"; Value = "KTK-R-20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VOLTAGE_RATING"; Value = "600 VAC"; VariantName = "[No Variations]"
+Added Component: Designator=T1(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "left"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Left"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=T2(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "left"; VariantName = "[No Variations]"
+Added Component: Designator=T3(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "left"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Left"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=T4(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "left"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Left"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=T5(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "right"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Right"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=T6(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "right"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Right"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=T7(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "right"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Right"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=T8(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "right"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Right"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=T9(M5 TERMINAL)
+Add component (AddParameter): Name = "ClassName"; Value = "right"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Right"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetF1_1 Pin=F1-1
+Added Pin To Net: NetName=NetF1_1 Pin=F1-1
+Added Pin To Net: NetName=NetF1_1 Pin=T1-1
+Added Net: Name=NetF1_1
+Added Pin To Net: NetName=NetF1_2 Pin=F1-2
+Added Pin To Net: NetName=NetF1_2 Pin=F1-2
+Added Pin To Net: NetName=NetF1_2 Pin=T5-1
+Added Net: Name=NetF1_2
+Added Pin To Net: NetName=NetF2_1 Pin=F2-1
+Added Pin To Net: NetName=NetF2_1 Pin=F2-1
+Added Pin To Net: NetName=NetF2_1 Pin=F3-1
+Added Pin To Net: NetName=NetF2_1 Pin=F3-1
+Added Pin To Net: NetName=NetF2_1 Pin=T3-1
+Added Net: Name=NetF2_1
+Added Pin To Net: NetName=NetF2_2 Pin=F2-2
+Added Pin To Net: NetName=NetF2_2 Pin=F2-2
+Added Pin To Net: NetName=NetF2_2 Pin=T7-1
+Added Net: Name=NetF2_2
+Added Pin To Net: NetName=NetF3_2 Pin=F3-2
+Added Pin To Net: NetName=NetF3_2 Pin=F3-2
+Added Pin To Net: NetName=NetF3_2 Pin=T8-1
+Added Net: Name=NetF3_2
+Added Pin To Net: NetName=NetT2_1 Pin=T2-1
+Added Pin To Net: NetName=NetT2_1 Pin=T6-1
+Added Net: Name=NetT2_1
+Added Pin To Net: NetName=NetT4_1 Pin=T4-1
+Added Pin To Net: NetName=NetT4_1 Pin=T9-1
+Added Net: Name=NetT4_1
+Added Class: Name=120_VOLT
+Added Class: Name=240_VOLT
+Added Class: Name=Classes
+Added Class: Name=left
+Added Class: Name=right
+Added Class: Name=Classes_StructureClass
+Added Class: Name=TopSheet_Classes_StructureClass
+Added Member To Class: ClassName=AMP_10 Member=Wire NetF1_1
+Added Member To Class: ClassName=VOLT_120 Member=Wire NetF1_1
+Added Member To Class: ClassName=AMP_10 Member=Wire NetF1_2
+Added Member To Class: ClassName=VOLT_120 Member=Wire NetF1_2
+Added Member To Class: ClassName=AMP_30 Member=Wire NetF2_1
+Added Member To Class: ClassName=VOLT_240 Member=Wire NetF2_1
+Added Member To Class: ClassName=AMP_10 Member=Wire NetF2_2
+Added Member To Class: ClassName=VOLT_240 Member=Wire NetF2_2
+Added Member To Class: ClassName=AMP_20 Member=Wire NetF3_2
+Added Member To Class: ClassName=VOLT_240 Member=Wire NetF3_2
+Added Member To Class: ClassName=AMP_10 Member=Wire NetT2_1
+Added Member To Class: ClassName=VOLT_120 Member=Wire NetT2_1
+Added Member To Class: ClassName=AMP_30 Member=Wire NetT4_1
+Added Member To Class: ClassName=VOLT_240 Member=Wire NetT4_1
