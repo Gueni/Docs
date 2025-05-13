@@ -1,0 +1,11 @@
+LTspice 24.0.12 for Windows
+Circuit: * D:\WORKSPACE\Documents\LTspice\RDCFlyback.asc
+Start Time: Wed Oct  2 22:32:21 2024
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 1.680 seconds.
+
