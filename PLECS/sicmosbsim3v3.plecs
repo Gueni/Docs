@@ -1,0 +1,973 @@
+Plecs {
+  Name          "sicmosbsim3v3"
+  Version       "4.9"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "3"
+  DatatypeInheritanceConflictMsg "2"
+  ContSampleTimeConflictMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  FixedPointDatatypeOverride "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry "[858 304 615 486]"
+  ScriptsDialogSplitterPos "100"
+  Schematic {
+    Location      [0, 23; 1536, 773]
+    ZoomFactor    1.14437
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          VarCapacitor
+      Name          "cgs"
+      Show          on
+      Position      [920, 265]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Coupling"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          VarCapacitor
+      Name          "cds"
+      Show          on
+      Position      [1110, 215]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "Coupling"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          CurrentSource
+      Name          "id"
+      Show          on
+      Position      [1000, 215]
+      Direction     up
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rg"
+      Show          on
+      Position      [800, 215]
+      Direction     right
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "R"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          VarCapacitor
+      Name          "cgd"
+      Show          on
+      Position      [920, 155]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "Coupling"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "Lg"
+      Show          on
+      Position      [855, 215]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "L"
+        Value         "0.001"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          PulseGenerator
+      Name          "Pulse\nGenerator"
+      Show          on
+      Position      [110, 170]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Hi"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Lo"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "f"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "DutyCycle"
+        Value         "0.5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Delay"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          EdgeDetection
+      Name          "Edge Detection"
+      Show          off
+      Position      [185, 150]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Direction"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          EdgeDetection
+      Name          "Edge Detection1"
+      Show          off
+      Position      [185, 190]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Direction"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "Components/Control/Delays/Pulse Delay"
+      Name          "Pulse Delay"
+      Show          on
+      Position      [320, 170]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-15, -15; 15, 15]
+      Parameter {
+        Variable      "T_d"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "y_init"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "buffer_size"
+        Value         "1024"
+        Show          off
+      }
+      Terminal {
+        Type          Output
+        Position      [19, 0]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-15, 0]
+        Direction     left
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "CustomLibraries/PWM/SR"
+      Name          "SR"
+      Show          on
+      Position      [260, 170]
+      Direction     up
+      Flipped       on
+      LabelPosition south
+      Frame         [-15, -20; 15, 20]
+      Parameter {
+        Variable      "Init"
+        Value         "0"
+        Show          off
+      }
+      Terminal {
+        Type          Input
+        Position      [-15, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-15, 10]
+        Direction     left
+      }
+      Terminal {
+        Type          Output
+        Position      [19, 0]
+        Direction     right
+      }
+    }
+    Component {
+      Type          SignalSwitch
+      Name          "Switch"
+      Show          on
+      Position      [375, 240]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Criteria"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "Threshold"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "Constant4"
+      Show          off
+      Position      [285, 235]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-20, -10; 20, 10]
+      Parameter {
+        Variable      "Value"
+        Value         "12"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "Constant5"
+      Show          off
+      Position      [285, 255]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-20, -10; 20, 10]
+      Parameter {
+        Variable      "Value"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
+        Show          off
+      }
+    }
+    Component {
+      Type          RateLimiter
+      Name          "Rate Limiter"
+      Show          on
+      Position      [440, 240]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "RisingRateLimit"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "FallingRateLimit"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "SampleTimeMode"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          VoltageSource
+      Name          "V"
+      Show          on
+      Position      [490, 240]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rg1"
+      Show          on
+      Position      [580, 255]
+      Direction     right
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "R"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "Lg1"
+      Show          on
+      Position      [635, 255]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "L"
+        Value         "0.001"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D1"
+      Show          on
+      Position      [700, 255]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Vf"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "Rg2"
+      Show          on
+      Position      [700, 205]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "R"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "Lg2"
+      Show          on
+      Position      [645, 205]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "L"
+        Value         "0.001"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D2"
+      Show          on
+      Position      [580, 205]
+      Direction     right
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "Vf"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Inductor
+      Name          "Lg3"
+      Show          on
+      Position      [635, 290]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "L"
+        Value         "0.001"
+        Show          off
+      }
+      Parameter {
+        Variable      "i_init"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          FromFile
+      Name          "From File"
+      Show          off
+      Position      [225, 420]
+      Direction     right
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "Filename"
+        Value         "'D:\\WORKSPACE\\Python_code\\PyShorts\\DATA\\VDS_VGS_T_"
+"Sweep_ID_CGD_CGS_CDS.csv'"
+        Show          off
+        Evaluate      off
+      }
+      Parameter {
+        Variable      "FileType"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Width"
+        Value         "6"
+        Show          off
+      }
+      Parameter {
+        Variable      "LeftExtrapolation"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "LeftValue"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Interpolation"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "RightExtrapolation"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "RightValue"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "LocateDiscontinuities"
+        Value         "2"
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalDemux
+      Name          "Demux"
+      Show          off
+      Position      [435, 445]
+      Direction     right
+      Flipped       on
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "4"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [470, 385]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 26; 1536, 834]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGgA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABoAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABgAAAAMNAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":121,\"Labels\":[],"
+"\"VisualIdxs\":[]}"
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          SignalSelector
+      Name          "Selector"
+      Show          off
+      Position      [375, 445]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "InputWidth"
+        Value         "7"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutputIndices"
+        Value         "[ 4 5 6 7]"
+        Show          off
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "id"
+      SrcTerminal   1
+      Points        [1000, 130]
+      Branch {
+        Points        [920, 130]
+        DstComponent  "cgd"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [1110, 130]
+        DstComponent  "cds"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "cds"
+      SrcTerminal   2
+      Points        [1110, 290; 1000, 290]
+      Branch {
+        DstComponent  "id"
+        DstTerminal   2
+      }
+      Branch {
+        Points        [920, 290]
+        Branch {
+          DstComponent  "cgs"
+          DstTerminal   2
+        }
+        Branch {
+          DstComponent  "Lg3"
+          DstTerminal   1
+        }
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Lg"
+      SrcTerminal   1
+      DstComponent  "Rg"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "cgd"
+      SrcTerminal   2
+      Points        [920, 215]
+      Branch {
+        DstComponent  "Lg"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "cgs"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Pulse\nGenerator"
+      SrcTerminal   1
+      Points        [145, 170]
+      Branch {
+        Points        [145, 150]
+        DstComponent  "Edge Detection"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [145, 190]
+        DstComponent  "Edge Detection1"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Edge Detection"
+      SrcTerminal   2
+      Points        [220, 150; 220, 160]
+      DstComponent  "SR"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Edge Detection1"
+      SrcTerminal   2
+      Points        [220, 190; 220, 180]
+      DstComponent  "SR"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "SR"
+      SrcTerminal   3
+      DstComponent  "Pulse Delay"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Pulse Delay"
+      SrcTerminal   1
+      Points        [375, 170]
+      DstComponent  "Switch"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Constant4"
+      SrcTerminal   1
+      DstComponent  "Switch"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Constant5"
+      SrcTerminal   1
+      Points        [330, 255; 330, 245]
+      DstComponent  "Switch"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Switch"
+      SrcTerminal   1
+      DstComponent  "Rate Limiter"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Rate Limiter"
+      SrcTerminal   2
+      DstComponent  "V"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Lg1"
+      SrcTerminal   1
+      DstComponent  "Rg1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Lg1"
+      SrcTerminal   2
+      DstComponent  "D1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Lg2"
+      SrcTerminal   1
+      DstComponent  "Rg2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Lg2"
+      SrcTerminal   2
+      DstComponent  "D2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "D2"
+      SrcTerminal   2
+      Points        [550, 205]
+      Branch {
+        Points        [550, 255]
+        DstComponent  "Rg1"
+        DstTerminal   2
+      }
+      Branch {
+        Points        [490, 205]
+        DstComponent  "V"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Lg3"
+      SrcTerminal   2
+      Points        [490, 290]
+      DstComponent  "V"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Rg2"
+      SrcTerminal   2
+      Points        [730, 205; 730, 215]
+      Branch {
+        Points        [730, 255]
+        DstComponent  "D1"
+        DstTerminal   2
+      }
+      Branch {
+        DstComponent  "Rg"
+        DstTerminal   2
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From File"
+      SrcTerminal   1
+      Points        [270, 420; 270, 445]
+      DstComponent  "Selector"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Selector"
+      SrcTerminal   2
+      Points        [410, 445]
+      Branch {
+        DstComponent  "Demux"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [410, 385]
+        DstComponent  "Scope"
+        DstTerminal   1
+      }
+    }
+  }
+  Script {
+    Name          "Script"
+    Script        "\n\n\nparams.Vth0   = 1.0;\nparams.kT     = 2e-3;\nparams.m"
+"u0    = 500e-4;\nparams.mu_exp = 1.5;\nparams.Cox    = 3.45e-3;\nparams.W    "
+"  = 100e-6;\nparams.L      = 1e-6;\nparams.lambda = 0.02;\nparams.Cj0    = 1e"
+"-12;\nparams.Vbi    = 0.7;\nparams.m      = 0.5;\n\nfunction [Id, Cgs, Cgd, C"
+"ds] = mosfet_model(Vgs, Vds, T, params)\n    % Temperature-adjusted parameter"
+"s\n    Vth = params.Vth0 - params.kT * (T - 300);\n    mu_eff = params.mu0 * "
+"(300 / T)^params.mu_exp;\n    Cox = params.Cox;\n    W = params.W;\n    L = p"
+"arams.L;\n    lambda = params.lambda;\n    Vgt = Vgs - Vth;\n\n    % Initiali"
+"ze outputs\n    Id = 0;\n    Cgs = 0;\n    Cgd = 0;\n\n    if Vgt <= 0\n     "
+"   % Cutoff region\n        Id = 0;\n        Cgs = 0;\n        Cgd = 0;\n    "
+"elseif Vds < Vgt\n        % Linear region\n        Id = mu_eff * Cox * (W / L"
+") * (Vgt * Vds - 0.5 * Vds^2);\n        Cgs = (2 / 3) * Cox * W * L;\n       "
+" Cgd = (1 / 3) * Cox * W * L;\n    else\n        % Saturation region\n       "
+" Id = 0.5 * mu_eff * Cox * (W / L) * Vgt^2 * (1 + lambda * Vds);\n        Cgs"
+" = (1 / 3) * Cox * W * L;  % Approximation\n        Cgd = 0;\n    end\n\n    "
+"% Cds (junction-based, reverse-biased)\n    Cj0 = params.Cj0;\n    Vbi = para"
+"ms.Vbi;\n    m = params.m;\n    Cds = Cj0 / (1 + max(Vds, 0) / Vbi)^m;\nend\n"
+"\nT = 350;\nVgs = 2.5;\nVds = 1.0;\n\n[Id, Cgs, Cgd, Cds] = mosfet_model(Vgs,"
+" Vds, T, params);\n"
+  }
+}
+DemoSignature "jeWF9jJ6+cCYKREIKbWei6jD5NIl9nvgSxUHQWr98Wg="
